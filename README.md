@@ -6,6 +6,14 @@ This is a basic application crud that uses API Rest development with Node.js, Ex
 1. Install MySQL
 2. Create a database "movimientos"
 3. Add the table "presupuesto"
+CREATE TABLE `movimientos`.`presupuesto` (
+  `id` INT NOT NULL,
+  `tipo` VARCHAR(45) NOT NULL,
+  `monto` FLOAT NOT NULL,
+  `descripcion` VARCHAR(45) NOT NULL,
+  `fecha` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
+);
 
 # Development Server
 1. folder /client
