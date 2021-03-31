@@ -1,4 +1,4 @@
-# Mi saldo app - API Rest - Node.js + Express.js + MySQL + React + Bootstrap
+# Mi saldo app | API Rest: Node.js + Express.js + MySQL + React + Bootstrap
 Demo project to manage a personal budget. 
 This is a basic application crud that uses API Rest development with Node.js, Express and MySQL in the backend, and React, Bootstrap in de frontend.
  
