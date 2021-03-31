@@ -4,7 +4,7 @@ This is a basic application crud that uses API Rest development with Node.js, Ex
  
 # Database
 1. Install MySQL
-2. Create a database "movimientos"
+2. Create a database "movimientos": ´CREATE SCHEMA `movimientos`;´
 3. Add the table "presupuesto":
 `CREATE TABLE `movimientos`.`presupuesto` (
   `id` INT NOT NULL,
