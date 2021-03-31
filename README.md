@@ -9,10 +9,10 @@ This is a basic application crud that uses API Rest development with Node.js, Ex
 
 # Development Server
 1. folder /client
-2. run:  npm start
+2. run  "npm start"
 Open your browser on http://localhost:3000/
 
 # Express Server
 1. folder /server
-2. run: node index.js
+2. run: "node index.js"
 3. Open your browser on http://localhost:3001/
