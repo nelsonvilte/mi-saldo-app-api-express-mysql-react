@@ -13,7 +13,7 @@ This is a basic application crud that uses API Rest development with Node.js, Ex
   `descripcion` VARCHAR(45) NOT NULL,
   `fecha` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`));
-);`
+`
 
 # Development Server
 1. folder /client
