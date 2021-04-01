@@ -16,11 +16,13 @@ This is a basic application crud that uses API Rest development with Node.js, Ex
 `
 
 # Development Server
-1. folder /client
-2. run  "npm start"
+1. run "npm install"
+2. folder /client
+3. run  "npm start"
 Open your browser on http://localhost:3000/
 
 # Express Server
-1. folder /server
-2. run: "node index.js"
-3. Open your browser on http://localhost:3001/
+1. run "npm install"
+2. folder /server
+3. run "node index.js"
+4. Open your browser on http://localhost:3001/
