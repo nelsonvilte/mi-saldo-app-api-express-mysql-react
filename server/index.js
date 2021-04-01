@@ -8,7 +8,7 @@ app.use(express.json());
 const db = mysql.createConnection({
   user: "root",
   host: "localhost",
-  password: "2012.20",
+  password: "password", //colocar el password de la base de datos
   database: "movimientos",
 });
 //rutas
