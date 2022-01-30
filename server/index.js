@@ -4,13 +4,15 @@ const mysql = require("mysql");
 const cors = require("cors");
 app.use(cors());
 app.use(express.json());
+
 //configurar conexion a base de datos local
 const db = mysql.createConnection({
   user: "root",
   host: "localhost",
-  password: "password", //colocar el password de la base de datos
+  password: "2012.20", //colocar el password de la base de datos
   database: "movimientos",
 });
+
 //rutas
 app.post("/create", (req, res) => {
   const tipo = req.body.tipo;
@@ -21,9 +23,9 @@ app.post("/create", (req, res) => {
   db.query(
     "INSERT INTO PRESUPUESTO(tipo, monto,descripcion, fecha) VALUES (?,?,?,?)",
     [tipo, monto, descripcion, fecha],
-    (err, resutl) => {
-      if (err) {
-        console.log(err);
+    (error, result) => {
+      if (error) {
+        console.log(error);
       } else {
         res.send("Datos insertados");
       }
@@ -32,9 +34,9 @@ app.post("/create", (req, res) => {
 });
 
 app.get("/movimiento", (req, res) => {
-  db.query("SELECT * FROM presupuesto order by id desc", (err, result) => {
-    if (err) {
-      console.log(err);
+  db.query("SELECT * FROM presupuesto order by id desc", (error, result) => {
+    if (error) {
+      console.log(error);
     } else {
       res.send(result);
     }
@@ -44,9 +46,9 @@ app.get("/movimiento", (req, res) => {
 app.get("/totalgastos", (req, res) => {
   db.query(
     "SELECT ROUND(SUM (monto),2) as Total FROM presupuesto WHERE tipo=2",
-    (err, result) => {
-      if (err) {
-        console.log(err);
+    (error, result) => {
+      if (error) {
+        console.log(error);
       } else {
         res.send(result);
       }
@@ -57,9 +59,9 @@ app.get("/totalgastos", (req, res) => {
 app.get("/totalegresos", (req, res) => {
   db.query(
     "SELECT ROUND(SUM (monto),1) as Total FROM presupuesto WHERE tipo=1",
-    (err, result) => {
-      if (err) {
-        console.log(err);
+    (error, result) => {
+      if (error) {
+        console.log(error);
       } else {
         res.send(result);
       }
@@ -75,9 +77,9 @@ app.put("/update", (req, res) => {
   db.query(
     "UPDATE presupuesto SET descripcion=?, monto=?, fecha = ? WHERE id = ?",
     [descripcion, monto, fecha, id],
-    (err, result) => {
-      if (err) {
-        console.log(err);
+    (error, result) => {
+      if (error) {
+        console.log(error);
       } else {
         res.send(result);
       }
@@ -87,9 +89,9 @@ app.put("/update", (req, res) => {
 
 app.delete("/delete/:id", (req, res) => {
   const id = req.params.id;
-  db.query("DELETE FROM presupuesto WHERE id = ?", id, (err, result) => {
-    if (err) {
-      console.log(err);
+  db.query("DELETE FROM presupuesto WHERE id = ?", id, (error, result) => {
+    if (error) {
+      console.log(error);
     } else {
       res.send(result);
     }
