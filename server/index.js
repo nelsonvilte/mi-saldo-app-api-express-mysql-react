@@ -1,3 +1,4 @@
+const config = require("./config");
 const express = require("express");
 const app = express();
 const mysql = require("mysql");
@@ -7,10 +8,10 @@ app.use(express.json());
 
 //configurar conexion a base de datos local
 const db = mysql.createConnection({
-  user: "root",
-  host: "localhost",
-  password: "2012.20", //colocar el password de la base de datos
-  database: "movimientos",
+  user: config.USER,
+  host: config.HOST,
+  password: config.PASSWORD, 
+  database: config.DBNAME,
 });
 
 //rutas
@@ -98,6 +99,6 @@ app.delete("/delete/:id", (req, res) => {
   });
 });
 
-app.listen(3001, () => {
-  console.log("Server running....  ");
+app.listen(config.PORT, config.HOST, function () {
+  console.log(`Server runing... on http://${config.HOST}:${config.PORT}`);
 });
